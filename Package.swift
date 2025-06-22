@@ -27,26 +27,3 @@ let package = Package(
         ),
     ]
 )
-
-// For development on iPadOS
-#if canImport(AppleProductTypes) && os(iOS)
-    import AppleProductTypes
-
-    package.products += [
-        .iOSApplication(
-            name: "Playground",
-            targets: ["Playground"],
-            supportedDeviceFamilies: [],
-            supportedInterfaceOrientations: []
-        )
-    ]
-    package.targets += [
-        .executableTarget(
-            name: "Playground",
-            dependencies: [
-                "ExportIPAUI"
-            ],
-            path: "Playground"
-        )
-    ]
-#endif
