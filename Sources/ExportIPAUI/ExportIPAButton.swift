@@ -1,3 +1,4 @@
+import ExportIPA
 import SwiftUI
 
 public struct ExportIPAButton {

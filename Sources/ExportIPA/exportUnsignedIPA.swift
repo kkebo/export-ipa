@@ -7,8 +7,8 @@ public enum ExportIPAError: Error {
 
 public func exportUnsignedIPA(customBundleID: String? = nil) throws -> URL {
     let fm = FileManager.default
-    guard let infoDict = Bundle.main.infoDictionary else { throw .noInfoPlist }
-    guard let appName = infoDict["CFBundleName"] else { throw .noBundleName }
+    guard let infoDict = Bundle.main.infoDictionary else { throw ExportIPAError.noInfoPlist }
+    guard let appName = infoDict["CFBundleName"] else { throw ExportIPAError.noBundleName }
 
     let tmpDir = try fm.url(
         for: .itemReplacementDirectory,
