@@ -8,10 +8,12 @@ public enum ExportIPAError: Error {
 
 /// A helper function to generate an .ipa file of the current app.
 ///
-/// - Parameters:
+/// - Parameter:
 ///   - customBundleID: The bundle ID used in Info.plist in an .ipa file.
 ///
 /// - Returns: The URL of the generated .ipa file path.
+///
+/// - Throws: `ExportIPAError.noInfoPlist` if `Bundle.main.infoDictionary` is not found. `ExportIPAError.noBundleName` if `CFBundleName` is missing. The other errors may occur during creating an .ipa file.
 public func exportUnsignedIPA(customBundleID: String? = nil) throws -> URL {
     let fm = FileManager.default
     guard let infoDict = Bundle.main.infoDictionary else { throw ExportIPAError.noInfoPlist }
