@@ -1,10 +1,17 @@
 import Foundation
 
+/// An error type for ExportIPA.
 public enum ExportIPAError: Error {
     case noInfoPlist
     case noBundleName
 }
 
+/// A helper function to generate an .ipa file of the current app.
+///
+/// - Parameters:
+///   - customBundleID: The bundle ID used in Info.plist in an .ipa file.
+///
+/// - Returns: The URL of the generated .ipa file path.
 public func exportUnsignedIPA(customBundleID: String? = nil) throws -> URL {
     let fm = FileManager.default
     guard let infoDict = Bundle.main.infoDictionary else { throw ExportIPAError.noInfoPlist }
