@@ -22,7 +22,7 @@ let package = Package(
         .target(
             name: "ExportIPAUI",
             dependencies: [
-                "ExportIPA"
+                .target(name: "ExportIPA")
             ]
         ),
     ]
