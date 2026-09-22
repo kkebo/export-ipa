@@ -8,11 +8,11 @@ let package = Package(
     products: [
         .library(
             name: "ExportIPA",
-            targets: ["ExportIPA"]
+            targets: ["ExportIPA"],
         ),
         .library(
             name: "ExportIPAUI",
-            targets: ["ExportIPAUI"]
+            targets: ["ExportIPAUI"],
         ),
     ],
     targets: [
@@ -23,7 +23,7 @@ let package = Package(
             name: "ExportIPAUI",
             dependencies: [
                 .target(name: "ExportIPA")
-            ]
+            ],
         ),
-    ]
+    ],
 )

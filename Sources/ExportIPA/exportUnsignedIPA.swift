@@ -23,7 +23,7 @@ public func exportUnsignedIPA(customBundleID: String? = nil) throws -> URL {
         for: .itemReplacementDirectory,
         in: .userDomainMask,
         appropriateFor: FileManager.default.temporaryDirectory,
-        create: true
+        create: true,
     )
 
     let payloadDir = tmpDir.appending(component: "Payload")
@@ -48,7 +48,7 @@ public func exportUnsignedIPA(customBundleID: String? = nil) throws -> URL {
         .coordinate(
             readingItemAt: payloadDir,
             options: .forUploading,
-            error: &outError
+            error: &outError,
         ) { url in
             do {
                 try fm.moveItem(at: url, to: ipaURL)
