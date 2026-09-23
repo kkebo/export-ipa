@@ -1,7 +1,7 @@
 # ExportIPA
 
-[![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://www.swift.org)
-[![Swift Playground](https://img.shields.io/badge/Swift%20Playgrounds-4.6-orange.svg)](https://itunes.apple.com/jp/app/swift-playgrounds/id908519492)
+[![Swift](https://img.shields.io/badge/Swift-6.2-orange.svg)](https://www.swift.org)
+[![Swift Playground](https://img.shields.io/badge/Swift%20Playgrounds-4.7-orange.svg)](https://itunes.apple.com/jp/app/swift-playgrounds/id908519492)
 ![Platform](https://img.shields.io/badge/platform-ipados-lightgrey.svg)
 [![License](https://img.shields.io/github/license/kkebo/export-ipa.svg)](LICENSE)
 
@@ -10,7 +10,7 @@ This Swift package contains a helper function to generate an .ipa file in App Pr
 ## Prerequisites
 
 - iPadOS 18+
-- Swift Playground 4.6.4+
+- Swift Playground 4.7+
 
 ## How to use in your App Playground
 
