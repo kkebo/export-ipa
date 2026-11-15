@@ -26,8 +26,11 @@ jobs:
             .build
           key: ${{ runner.os }}-swiftpm-${{ hashFiles('Package.resolved') }}
           restore-keys: ${{ runner.os }}-swiftpm-
-      - run: xcrun swift --version
-      - run: xcrun swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
+      - run: echo "SWIFT=$(xcrun -f swift)" >> "$GITHUB_ENV"
+      - run: |
+          "$SWIFT" --version
+      - run: |
+          "$SWIFT" build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
   lint:
     runs-on: ubuntu-26.04-arm
     container: swift:6.4
